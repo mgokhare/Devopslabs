@@ -51,9 +51,10 @@ scenario 3: check all the commits made so far & who commited at what time etc...
 	git log --oneline ( will show all the commits in short form )
 
 ===================================================================================================================	
-scenario 4: it a git local repository remove somefiles permanently & remove some files only from git repository ( means the file should exist on machine but git should not track )
+scenario 4: In a git local repository remove somefiles permanently & remove some files only from git repository ( means the file should exist on machine but git should not track )
 	
 	cd ProjectA
+        git ls-files (show all the files tracked by Git, which are committed)
 	git rm readme.txt ( removes file from project & stages the changes to git ( means we do not need to run git add for this change ) )
 	ls -ltr -- to see file is removed 
 	git status -- to check changes made
