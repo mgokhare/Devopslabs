@@ -1,3 +1,4 @@
+
 scenario 1: Create Empty Local repository & add some files, modify files then add to git staging area & commit all changes together
 
 	mkdir ProjectA ; cd ProjectA
@@ -9,6 +10,21 @@ scenario 1: Create Empty Local repository & add some files, modify files then ad
 	git commit -m "any message" ( saves the files to git repository permanently  & genereates a commit id )
 
 ===================================================================================================================	
+
+Scenario 1.1) Create a folder "test" and create a file "file.txt" ==> Git should not track the empty folder. Git tracks only file. If folder has any files then it will be tracked. Create one more folder "occupy" and add html.index file in it.
+        cd <to git initialize project folder>
+        mkdir test
+        touch file.txt
+        git status (empty folder will not be tracked). File file.txt will be tracked)
+        mkdir occupy
+        cd occupy
+        touch index.html
+        git status (files under "occupy" folder will be tracked. eg. untracked file occupy/ use git add to track)
+
+Scenario 1.2) Rename folder "occupy" to "new-folder" - as occupy folder has files, hence after rename new-folder will be tracked/
+        mv occupy/ new-folder
+        git status (It starts tracking for new-folder and will ask to use git add)
+========================================================================================================================                
 scenario 2: in a git local repository add more files, edit some files, remove somefiles & add to staging area then commit the changes for every change accordingly 
 
 	cd ProjectA ( switch into the project direcotry in which git init command was ran )
